@@ -23,7 +23,7 @@ function class(name)
     prototype.__call = function(class, ...)
       local o = {}
       setmetatable(o, prototype)
-      return prototype.constructor(o, arg)
+      return prototype.constructor(o, ...)
     end
     --funny tongue twister lays ahead
     --if a super prototype exists, set the prototype of the prototype to the super prototype
@@ -43,16 +43,16 @@ local person = class "person" {
   talk = function(self)
     print(self.name)
   end,
-  constructor = function(self, name)
-    self.age = 10
+  constructor = function(self, name, age)
+    self.age = age
     self.name = name
     return self
   end
 }
 
-local p = person("john")
+local p = person("john", 10)
 
-print(p.name, person.name)
+print(p.name, p.age)
 
 local employee = class "employee" : extends(person) {
   salary = 25000,
