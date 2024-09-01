@@ -37,6 +37,8 @@ function class(name)
   return classBluePrint
 end
 
+--------------------EXAMPLES--------------------
+
 local person = class "person" {
   age = 25,
   name = "default",
@@ -69,3 +71,6 @@ local manager = class "manager" : extends(employee) {
   salary = 100000,
   position = "steel factory",
 }
+
+--export the function
+return class
