@@ -5,7 +5,7 @@ This library demonstrates that it is possible to have class-like definitions of 
 - ✅Single Inheritance
 - ✅Method Overriding
 - ✅Familiar class syntax
-- ❌Constructor arguments
+- ✅Constructor arguments
 - ❌Private and protected members/methods
 
 ## Usage
@@ -17,10 +17,10 @@ Import the module. The only item in it is the "class" function (it acts more as 
 To define a class definition, follow the following steps:
 1. Create a variable to store it in (this will serve as the constructor later on)
 2. define the class as shown below in the example code in the form: class "className" {body}
-3. define a constructor in the body by having a field named constructor and assign a function to it that takes a self argument
+3. define a constructor in the body by having a field named constructor and assign a function to it that takes a self argument and other arguments that you want
 
-Now, just call this class definition you stored in a variable like className().
-Constructor arguments are currently not supported.
+Now, just call this class definition you stored in a variable like className() and pass it the variables it needs.
+Note that you dont pass the self argument, just the arguments after it.
 ```lua
 local person = class "person" {
   age = 25,
@@ -28,13 +28,14 @@ local person = class "person" {
   talk = function(self)
     print(self.name)
   end,
-  constructor = function(self, ...)
-    self.age = 10
+  constructor = function(self, name, age)
+    self.age = age
+    self.name = name
     return self
   end
 }
 
-local p = person()
+local p = person("john", 10)
 ```
 
 # Inheritance
