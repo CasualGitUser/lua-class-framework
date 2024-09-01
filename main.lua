@@ -23,10 +23,11 @@ function class(name)
     prototype.__call = function(class, ...)
       local o = {}
       setmetatable(o, prototype)
-      return prototype.__init(o, arg)
+      return prototype.constructor(o, arg)
     end
     --funny tongue twister lays ahead
     --if a super prototype exists, set the prototype of the prototype to the super prototype
+    --aka inheritance
     if self.super then setmetatable(prototype, self.super) end
     --overrides the current metatable (discards extends and setSuper functions) with the specified prototype
     setmetatable(classBluePrint, prototype)
@@ -42,25 +43,25 @@ local person = class "person" {
   talk = function(self)
     print(self.name)
   end,
-  __init = function(self, name)
-    self.name = name[1]
+  constructor = function(self, name)
+    self.age = 10
+    self.name = name
     return self
   end
 }
 
-local john = person("john")
-print(john.name)
+local p = person("john")
 
+print(p.name, person.name)
 
 local employee = class "employee" : extends(person) {
   salary = 25000,
   flex = function(self)
     print("my salary is: ", self.salary)
   end,
-  __call = function(self, ...)
-    local o = {}
-    setmetatable(o, getmetatable(self))
-    return o
+  constructor = function(self, ...)
+    self.age = 10
+    return self
   end
 }
 
@@ -68,31 +69,3 @@ local manager = class "manager" : extends(employee) {
   salary = 100000,
   position = "steel factory",
 }
-
--- local employee = class "employee" : extends(person) {
---   salary = 25000,
---   flex = function(self)
---     print("my salary is: ", self.salary)
---   end,
---   __call = function(table, ...)
---     local o = {}
---     setmetatable(o, getmetatable(table))
---     return o
---   end
--- }
-
--- print(employee().age)
-
--- print(employee:extends(person))
-
--- local employee = class "employee" : extends(person) {
---   salary = 25000,
---   flex = function(self)
---     print("my salary is: ", self.salary)
---   end,
---   __call = function(table, ...)
---     local o = {}
---     setmetatable(o, getmetatable(table))
---     return o
---   end
--- }
