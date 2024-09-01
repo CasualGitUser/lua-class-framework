@@ -17,10 +17,9 @@ Import the module. The only item in it is the "class" function (it acts more as 
 To define a class definition, follow the following steps:
 1. Create a variable to store it in (this will serve as the constructor later on)
 2. define the class as shown below in the example code in the form: class "className" {body}
-3. define a constructor using the __call method in the body
-4. the setmetatable call in the __call metamethod is necessary to work, but i plan on making this implicit soon
+3. define a constructor in the body by having a field named constructor and assign a function to it that takes a self argument
 
-Now, just call this class definition you store in a variable like className().
+Now, just call this class definition you stored in a variable like className().
 Constructor arguments are currently not supported.
 ```
 local person = class "person" {
@@ -29,15 +28,13 @@ local person = class "person" {
   talk = function(self)
     print(self.name)
   end,
-  __call = function(self, ...)
-    local o = {}
-    setmetatable(o, getmetatable(self))
-    return o
+  constructor = function(self, ...)
+    self.age = 10
+    return self
   end
 }
 
 local p = person()
-p.age = 5
 ```
 
 # Inheritance
@@ -51,10 +48,9 @@ local employee = class "employee" : extends(person) {
   flex = function(self)
     print("my salary is: ", self.salary)
   end,
-  __call = function(self, ...)
-    local o = {}
-    setmetatable(o, getmetatable(self))
-    return o
+  constructor = function(self, ...)
+    self.age = 10
+    return self
   end
 }
 ```
