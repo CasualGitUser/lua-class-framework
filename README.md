@@ -1,19 +1,19 @@
-#Class like OOP in Lua
+# Class like OOP in Lua
 This library demonstrates that it is possible to have class-like definitions of classes in Lua using currying, braceless functions and a bunch of metatable magic in quite few lines of code.
 
-##Features
+## Features
 ✅Single Inheritance
 ✅Method Overriding
 ✅Familiar class syntax
 ❌Traditional constructors
 ❌Private and protected members/methods
 
-##Usage
+## Usage
 Import the module. The only item in it is the "class" function (it acts more as a keyword - see the examples below).
 
-##Examples
+## Examples
 
-#Define a class
+# Define a class
 To define a class definition, follow the following steps:
 1. Create a variable to store it in (this will serve as the constructor later on)
 2. define the class as shown below in the example code in the form: class "className" {body}
@@ -40,7 +40,7 @@ local p = person()
 p.age = 5
 '''
 
-#Inheritance
+# Inheritance
 The syntax for inheritance is similar to how it would be done in a feature with OOP support.
 To inherit, write a colon (:) after your class name and extends(superClass).
 The super class needs to be the actual class, not a instance of that class.
