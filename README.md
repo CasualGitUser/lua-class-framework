@@ -21,7 +21,7 @@ To define a class definition, follow the following steps:
 
 Now, just call this class definition you stored in a variable like className().
 Constructor arguments are currently not supported.
-```
+```lua
 local person = class "person" {
   age = 25,
   name = "default",
@@ -42,7 +42,7 @@ The syntax for inheritance is similar to how it would be done in a feature with 
 To inherit, write a colon (:) after your class name and extends(superClass).
 The super class needs to be the actual class, not a instance of that class.
 The subclass inherits all members and methods and all of them may or may not be overwritten in the subclass.
-```
+```lua
 local employee = class "employee" : extends(person) {
   salary = 25000,
   flex = function(self)
