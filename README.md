@@ -1,5 +1,5 @@
 # Class like OOP in Lua
-This library demonstrates that it is possible to have class-like definitions of classes in Lua using currying, braceless functions and a bunch of metatable magic in quite few lines of code.
+This library demonstrates that it is possible to have class-like definitions of classes in Lua using currying, braceless functions and a bunch of metatable magic.
 
 ## Features
 - ✅Single Inheritance
