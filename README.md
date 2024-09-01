@@ -8,6 +8,8 @@ This library demonstrates that it is possible to have class-like definitions of 
 - ✅Constructor arguments
 - ❌Private and protected members/methods
 
+Due to the underlying implementation, which is using metatables for both convenience and performance reasons, private and protected members/methods wont be added.
+
 ## Usage
 Import the module. The only item in it is the "class" function (it acts more as a keyword - see the examples below).
 
