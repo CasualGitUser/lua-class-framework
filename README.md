@@ -22,7 +22,7 @@ To define a class definition, follow the following steps:
 
 Now, just call this class definition you store in a variable like className().
 Constructor arguments are currently not supported.
-'''
+```
 local person = class "person" {
   age = 25,
   name = "default",
@@ -38,14 +38,14 @@ local person = class "person" {
 
 local p = person()
 p.age = 5
-'''
+```
 
 # Inheritance
 The syntax for inheritance is similar to how it would be done in a feature with OOP support.
 To inherit, write a colon (:) after your class name and extends(superClass).
 The super class needs to be the actual class, not a instance of that class.
 The subclass inherits all members and methods and all of them may or may not be overwritten in the subclass.
-'''
+```
 local employee = class "employee" : extends(person) {
   salary = 25000,
   flex = function(self)
@@ -57,4 +57,4 @@ local employee = class "employee" : extends(person) {
     return o
   end
 }
-'''
+```
