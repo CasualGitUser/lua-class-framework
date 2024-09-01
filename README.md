@@ -5,7 +5,7 @@ This library demonstrates that it is possible to have class-like definitions of 
 - ✅Single Inheritance
 - ✅Method Overriding
 - ✅Familiar class syntax
-- ❌Traditional constructors
+- ❌Constructor arguments
 - ❌Private and protected members/methods
 
 ## Usage
