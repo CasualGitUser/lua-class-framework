@@ -2,11 +2,11 @@
 This library demonstrates that it is possible to have class-like definitions of classes in Lua using currying, braceless functions and a bunch of metatable magic in quite few lines of code.
 
 ## Features
--✅Single Inheritance
--✅Method Overriding
--✅Familiar class syntax
--❌Traditional constructors
--❌Private and protected members/methods
+- ✅Single Inheritance
+- ✅Method Overriding
+- ✅Familiar class syntax
+- ❌Traditional constructors
+- ❌Private and protected members/methods
 
 ## Usage
 Import the module. The only item in it is the "class" function (it acts more as a keyword - see the examples below).
