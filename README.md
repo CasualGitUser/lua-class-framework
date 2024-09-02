@@ -6,6 +6,7 @@ This library demonstrates that it is possible to have class-like definitions of 
 - ✅Method Overriding
 - ✅Familiar class syntax
 - ✅Constructor arguments
+- ✅Type checking / Polymorphism
 - ❌Private and protected members/methods
 
 Due to the underlying implementation, which is using metatables for both convenience and performance reasons, private and protected members/methods wont be added.
@@ -37,7 +38,7 @@ local person = class "person" {
   end
 }
 
-local p = person("john", 10)
+local john = person("john", 10)
 ```
 
 # Inheritance
@@ -56,4 +57,28 @@ local employee = class "employee" : extends(person) {
     return self
   end
 }
+
+local bob = employee()
+bob.name = "name"
+```
+
+#Polymorphism
+Every class and instance has a .type property that can be compared.
+The .type property refers to the class type.
+```lua
+local robot = class "robot" {
+  fuel = 100,
+  drive = function()
+    print("driving")
+  end,
+  constructor = function(self)
+    return self
+  end
+}
+
+print(john.type == person.type) //true
+print(bob.type == employee.type) // true
+print(bob.type == person.type) // true
+print(bob.type == john.type) // true
+print(bob.type == robot.type) // false
 ```
