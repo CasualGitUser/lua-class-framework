@@ -12,7 +12,7 @@ This library demonstrates that it is possible to have class-like definitions of 
 Due to the underlying implementation, which is using metatables for both convenience and performance reasons, private and protected members/methods wont be added.
 
 ## Usage
-Import the module. The only item in it is the "class" function (it acts more as a keyword - see the examples below).
+Import the module. The exported item in it is the "class" function (it acts more as a keyword - see the examples below).
 
 ## Examples
 
