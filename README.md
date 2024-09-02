@@ -16,7 +16,7 @@ Import the module. The exported item in it is the "class" function (it acts more
 
 ## Examples
 
-# Define a class
+### Define a class
 To define a class definition, follow the following steps:
 1. Create a variable to store it in (this will serve as the constructor later on)
 2. define the class as shown below in the example code in the form: class "className" {body}
@@ -41,7 +41,7 @@ local person = class "person" {
 local john = person("john", 10)
 ```
 
-# Inheritance
+### Inheritance
 The syntax for inheritance is similar to how it would be done in a feature with OOP support.
 To inherit, write a colon (:) after your class name and extends(superClass).
 The super class needs to be the actual class, not a instance of that class.
@@ -62,7 +62,7 @@ local bob = employee()
 bob.name = "name"
 ```
 
-# Polymorphism
+### Polymorphism
 Every class and instance has a .type property that can be compared.
 The .type property refers to the class type.
 ```lua
