@@ -65,6 +65,7 @@ bob.name = "name"
 ### Polymorphism
 Every class and instance has a .type property that can be compared.
 The .type property refers to the class type.
+Note that you cant compare .type with a string because of metamethod limitations.
 ```lua
 local robot = class "robot" {
   fuel = 100,
@@ -81,4 +82,5 @@ print(bob.type == employee.type) // true
 print(bob.type == person.type) // true
 print(bob.type == john.type) // true
 print(bob.type == robot.type) // false
+print(john.type == "person") // false, due to limitations of the __eq metamethod (in this case it compares the primitives, aka a table with a string, which is obviously false).
 ```
