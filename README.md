@@ -62,7 +62,7 @@ local bob = employee()
 bob.name = "name"
 ```
 
-#Polymorphism
+# Polymorphism
 Every class and instance has a .type property that can be compared.
 The .type property refers to the class type.
 ```lua
