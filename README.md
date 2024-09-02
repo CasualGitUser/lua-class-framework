@@ -22,8 +22,8 @@ To define a class definition, follow the following steps:
 2. define the class as shown below in the example code in the form: class "className" {body}
 3. define a constructor in the body by having a field named constructor and assign a function to it that takes a self argument and other arguments that you want
 
-Now, just call this class definition you stored in a variable like className() and pass it the variables it needs.
-Note that you dont pass the self argument, just the arguments after it.
+Now, just call this class definition you stored in a variable like className() and pass it the variables it needs. <br />
+Note that you dont pass the self argument, just the arguments after it. <br />
 ```lua
 local person = class "person" {
   age = 25,
@@ -42,10 +42,10 @@ local john = person("john", 10)
 ```
 
 ### Inheritance
-The syntax for inheritance is similar to how it would be done in a feature with OOP support.
-To inherit, write a colon (:) after your class name and extends(superClass).
-The super class needs to be the actual class, not a instance of that class.
-The subclass inherits all members and methods and all of them may or may not be overwritten in the subclass.
+The syntax for inheritance is similar to how it would be done in a feature with OOP support. <br />
+To inherit, write a colon (:) after your class name and extends(superClass). <br />
+The super class needs to be the actual class, not a instance of that class. <br />
+The subclass inherits all members and methods and all of them may or may not be overwritten in the subclass. <br />
 ```lua
 local employee = class "employee" : extends(person) {
   salary = 25000,
@@ -63,8 +63,8 @@ bob.name = "name"
 ```
 
 ### Polymorphism
-Every class and instance has a .type property that can be compared.
-The .type property refers to the class type.
+Every class and instance has a .type property that can be compared. <br />
+The .type property refers to the class type. <br />
 Note that you cant compare .type with a string because of metamethod limitations.
 ```lua
 local robot = class "robot" {
